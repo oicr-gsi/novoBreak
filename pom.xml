@@ -6,7 +6,7 @@
     <parent>
         <groupId>ca.on.oicr.gsi</groupId>
         <artifactId>pipedev-niassa-cromwell-parent</artifactId>
-        <version>2.5.12</version>
+        <version>2.5.15</version>
         <relativePath/>
     </parent>
 
@@ -15,7 +15,7 @@
 
     <properties>
         <workflow-description>novoBreak is a tool used in cancer genomic studies to discover SV (both somatic and germline) breakpoints. It can report accurate breakpoints of Deletions (DEL), Duplications (DUP), Inversions (INV) and Translocations (TRA) (you should consider some of them are mobile elements insertions or templated insertions). For novel insertions, we may only report the breakpoints but not the inserted sequence.</workflow-description>
-        <wdl-workflow>workflowName.wdl</wdl-workflow>
+        <wdl-workflow>novoBreak.wdl</wdl-workflow>
         <test-basedir>tests/</test-basedir>
     </properties>
 
