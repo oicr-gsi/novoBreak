@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>ca.on.oicr.gsi</groupId>
+        <artifactId>pipedev-niassa-cromwell-parent</artifactId>
+        <version>2.5.12</version>
+        <relativePath/>
+    </parent>
+
+    <artifactId>novoBreak</artifactId>
+    <version>1.0</version>
+
+    <properties>
+        <workflow-description>novoBreak is a tool used in cancer genomic studies to discover SV (both somatic and germline) breakpoints. It can report accurate breakpoints of Deletions (DEL), Duplications (DUP), Inversions (INV) and Translocations (TRA) (you should consider some of them are mobile elements insertions or templated insertions). For novel insertions, we may only report the breakpoints but not the inserted sequence.</workflow-description>
+        <wdl-workflow>workflowName.wdl</wdl-workflow>
+        <test-basedir>tests/</test-basedir>
+    </properties>
+
+</project>
