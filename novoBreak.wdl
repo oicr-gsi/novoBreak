@@ -111,6 +111,7 @@ task runNovoBreak {
     ~{flagKmerSize} \
     ~{flagKmerMin} \
     -o kmer.txt
+
   >>>
 
   output {
