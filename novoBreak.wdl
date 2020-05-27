@@ -102,7 +102,7 @@ task runNovoBreak {
     -i ~{tumorBam} \
     -c ~{normalBam} \
     -r ~{referenceFasta} \
-    ~{true="-g 1" false="" outputGermlineEvents}
+    ~{true="-g 1" false="" outputGermlineEvents} \
     ~{"-k " + kmerSize} \
     ~{"-m " + kmerMin} \
     -o kmer.txt
