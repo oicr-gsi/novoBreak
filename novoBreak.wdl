@@ -95,11 +95,6 @@ task runNovoBreak {
     timeout: "Number of hours before task timeout"
   }
 
-  String modules = "~{novoBreakModule} ~{referenceModule}"
-  String flagOutputGermlineEvents = if outputGermlineEvents then "-g 1" else ""
-  String flagKmerSize = if defined(kmerSize) then "-k ~{kmerSize}" else ""
-  String flagKmerMin =  if defined(kmerMin) then "-m ~{kmerMin}" else ""
-
   command <<<
   set -euo pipefail
 
@@ -107,9 +102,9 @@ task runNovoBreak {
     -i ~{tumorBam} \
     -c ~{normalBam} \
     -r ~{referenceFasta} \
-    ~{flagOutputGermlineEvents} \
-    ~{flagKmerSize} \
-    ~{flagKmerMin} \
+    ~{true="-g 1" false="" outputGermlineEvents}
+    ~{"-k " + kmerSize} \
+    ~{"-m " + kmerMin} \
     -o kmer.txt
 
   >>>
@@ -129,7 +124,7 @@ task runNovoBreak {
   }
 
   runtime {
-    modules: "~{modules}"
+    modules: "~{novoBreakModule} ~{referenceModule}"
     memory:  "~{jobMemory} GB"
     cpu:     "~{threads}"
     timeout: "~{timeout}"
