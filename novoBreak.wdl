@@ -36,10 +36,19 @@ workflow novoBreak {
       }
     ]
     output_meta: {
-      germlineBam: "BAM file of germline hits (empty if outputGermlineEvents is false)",
-      somaticBam: "BAM file of somatic hits",
-      kmers: "Called kmers"
+    germlineBam: {
+        description: "BAM file of germline hits (empty if outputGermlineEvents is false)",
+        vidarr_label: "germlineBam"
+    },
+    somaticBam: {
+        description: "BAM file of somatic hits",
+        vidarr_label: "somaticBam"
+    },
+    kmers: {
+        description: "Called kmers",
+        vidarr_label: "kmers"
     }
+}
    }
 
   call runNovoBreak {

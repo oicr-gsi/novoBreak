@@ -48,37 +48,31 @@ Parameter|Value|Default|Description
 
 ### Outputs
 
-Output | Type | Description
----|---|---
-`germlineBam`|File|BAM file of germline hits (empty if outputGermlineEvents is false)
-`somaticBam`|File|BAM file of somatic hits
-`kmers`|File|Called kmers
+Output | Type | Description | Labels
+---|---|---|---
+`germlineBam`|File|BAM file of germline hits (empty if outputGermlineEvents is false)|vidarr_label: germlineBam
+`somaticBam`|File|BAM file of somatic hits|vidarr_label: somaticBam
+`kmers`|File|Called kmers|vidarr_label: kmers
 
 
-## Niassa + Cromwell
-
-This WDL workflow is wrapped in a Niassa workflow (https://github.com/oicr-gsi/pipedev/tree/master/pipedev-niassa-cromwell-workflow) so that it can used with the Niassa metadata tracking system (https://github.com/oicr-gsi/niassa).
-
-* Building
+## Commands
+This section lists command(s) run by novobreak workflow
+ 
+* Running novobreak
+ 
 ```
-mvn clean install
+   set -euo pipefail
+ 
+   novoBreak \
+     -i ~{tumorBam} \
+     -c ~{normalBam} \
+     -r ~{referenceFasta} \
+     ~{true="-g 1" false="" outputGermlineEvents} \
+     ~{"-k " + kmerSize} \
+     ~{"-m " + kmerMin} \
+     -o kmer.txt
+ 
 ```
-
-* Testing
-```
-mvn clean verify \
--Djava_opts="-Xmx1g -XX:+UseG1GC -XX:+UseStringDeduplication" \
--DrunTestThreads=2 \
--DskipITs=false \
--DskipRunITs=false \
--DworkingDirectory=/path/to/tmp/ \
--DschedulingHost=niassa_oozie_host \
--DwebserviceUrl=http://niassa-url:8080 \
--DwebserviceUser=niassa_user \
--DwebservicePassword=niassa_user_password \
--Dcromwell-host=http://cromwell-url:8000
-```
-
 ## Support
 
 For support, please file an issue on the [Github project](https://github.com/oicr-gsi) or send an email to gsi@oicr.on.ca .

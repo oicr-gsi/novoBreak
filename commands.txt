@@ -1,0 +1,18 @@
+## Commands
+This section lists command(s) run by novobreak workflow
+
+* Running novobreak
+
+```
+  set -euo pipefail
+
+  novoBreak \
+    -i ~{tumorBam} \
+    -c ~{normalBam} \
+    -r ~{referenceFasta} \
+    ~{true="-g 1" false="" outputGermlineEvents} \
+    ~{"-k " + kmerSize} \
+    ~{"-m " + kmerMin} \
+    -o kmer.txt
+
+```
