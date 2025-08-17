@@ -60,7 +60,10 @@
             }
         },
         "description": "novoBreak workflow tests",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "required_param_only",
         "metadata": {
             "novoBreak.germlineBam": {
@@ -158,7 +161,10 @@
             }
         },
         "description": "novoBreak workflow tests",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "all_param",
         "metadata": {
             "novoBreak.germlineBam": {
