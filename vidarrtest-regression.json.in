@@ -5,7 +5,7 @@
             "novoBreak.kmerSize": null,
             "novoBreak.normalBai": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bai",
+                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/test_inputs/Test02.annotated.chr22.bai",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -17,7 +17,7 @@
             },
             "novoBreak.normalBam": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bam",
+                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/test_inputs/Test02.annotated.chr22.bam",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -36,7 +36,7 @@
             "novoBreak.runNovoBreak.timeout": null,
             "novoBreak.tumorBai": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bai",
+                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/test_inputs/Test01.annotated.chr22.bai",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -48,7 +48,7 @@
             },
             "novoBreak.tumorBam": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bam",
+                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/test_inputs/Test01.annotated.chr22.bam",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -60,7 +60,10 @@
             }
         },
         "description": "novoBreak workflow tests",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "required_param_only",
         "metadata": {
             "novoBreak.germlineBam": {
@@ -92,7 +95,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/novoBreak/output_expectation/required_param_only.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/novoBreak/output_metrics/workflow_test_01.metrics",
                 "type": "script"
             }
         ]
@@ -103,7 +106,7 @@
             "novoBreak.kmerSize": 29,
             "novoBreak.normalBai": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bai",
+                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/test_inputs/Test02.annotated.chr22.bai",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -115,7 +118,7 @@
             },
             "novoBreak.normalBam": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bam",
+                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/test_inputs/Test02.annotated.chr22.bam",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -134,7 +137,7 @@
             "novoBreak.runNovoBreak.timeout": null,
             "novoBreak.tumorBai": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bai",
+                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/test_inputs/Test01.annotated.chr22.bai",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -146,7 +149,7 @@
             },
             "novoBreak.tumorBam": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bam",
+                    "configuration": "/.mounts/labs/gsi/testdata/novoBreak/test_inputs/Test01.annotated.chr22.bam",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -158,7 +161,10 @@
             }
         },
         "description": "novoBreak workflow tests",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "all_param",
         "metadata": {
             "novoBreak.germlineBam": {
@@ -190,7 +196,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/novoBreak/output_expectation/all_param.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/novoBreak/output_metrics/workflow_test_02.metrics",
                 "type": "script"
             }
         ]
